@@ -2,15 +2,20 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] Animator animator;
+
+    public void WalkRight(bool value)
     {
-        
+        animator.SetBool("WalkRight", value);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void WalkLeft(bool value)
     {
-        
+        animator.SetBool("WalkLeft", value);
+    }
+
+     public void GroundAnimation(bool value)
+    {
+        animator.SetBool("Ground", value);
     }
 }
