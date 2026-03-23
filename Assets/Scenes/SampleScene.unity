@@ -886,7 +886,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!4 &664116014
@@ -934,7 +934,7 @@ Transform:
   m_GameObject: {fileID: 683472612}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.04, y: 1.41, z: 0}
+  m_LocalPosition: {x: 0, y: 1.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1329,7 +1329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa34d011d357148b29d5e9ae31ebe7bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 1570894951}
+  _target: {fileID: 2009709287}
   _lerpRate: 5
 --- !u!4 &747738072 stripped
 Transform:
@@ -2049,7 +2049,7 @@ Transform:
   m_GameObject: {fileID: 1789448324}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.04, y: 1.896, z: 0}
+  m_LocalPosition: {x: 0, y: 1.896, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
