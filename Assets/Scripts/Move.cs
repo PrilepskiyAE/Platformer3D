@@ -54,11 +54,9 @@ public class Move : MonoBehaviour
             speedMultipayer = 0;
         }
 
-        if (currentVelocityX > 0.1f)
-            _rb.AddForce(Input.GetAxis("Horizontal") * _moveSpeed * speedMultipayer, 0, 0, ForceMode.VelocityChange);
-        else
-            _rb.AddForce(Input.GetAxis("Horizontal") * _moveLeftSpeed * speedMultipayer, 0, 0, ForceMode.VelocityChange);
-        if (grounded) _rb.AddForce(-_rb.linearVelocity.x * _friction, 0, 0, ForceMode.VelocityChange);
+    
+        
+        _rb.AddForce(-_rb.linearVelocity.x * _friction  * speedMultipayer, 0, 0, ForceMode.VelocityChange);
 
     }
 

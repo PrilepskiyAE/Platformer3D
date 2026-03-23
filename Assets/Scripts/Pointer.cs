@@ -17,5 +17,7 @@ public class Pointer : MonoBehaviour
         Vector3 point = ray.GetPoint(distance);
         Debug.Log(distance);
         aim.position = point;
+        Vector3 toAim = aim.position - transform.position;
+        transform.rotation = Quaternion.LookRotation(toAim);
     }
 }
