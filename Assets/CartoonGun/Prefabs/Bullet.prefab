@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 831011013838336656}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.59, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -77,7 +77,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 2
+  m_Time: 0.2
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -86,14 +86,23 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 0.1748813
+        time: 0.037464745
+        value: 0.16401249
         inSlope: 0
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -0.2669361
+        outSlope: -0.2669361
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.14284119
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -169,7 +178,7 @@ Transform:
   m_GameObject: {fileID: 8564307826279755141}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.012, y: 1.867, z: -0.7}
+  m_LocalPosition: {x: -1.578, y: 2.034, z: -0.7}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -262,6 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb68af29239eec9782d113d8f8285ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eff: {fileID: 1419525465467072, guid: ca151ce4250545c41b60b0dea0a85a6d, type: 3}
 --- !u!54 &7646840473781719956
 Rigidbody:
   m_ObjectHideFlags: 0

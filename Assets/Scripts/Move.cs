@@ -38,8 +38,11 @@ public class Move : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+   private void FixedUpdate()
     {
+        // _rb.AddForce(Input.GetAxis("Horizontal")*_moveSpeed,0,0,ForceMode.VelocityChange);
+        //  _rb.AddForce(-_rb.linearVelocity.x*_friction,0,0,ForceMode.VelocityChange);
+        // Сохраняем начальную скорость по оси X
         float currentVelocityX = _rb.linearVelocity.x;
         float speedMultipayer = 1f;
         if (!grounded) speedMultipayer = 0.1f;
@@ -54,9 +57,12 @@ public class Move : MonoBehaviour
             speedMultipayer = 0;
         }
 
-    
-        
-        _rb.AddForce(-_rb.linearVelocity.x * _friction  * speedMultipayer, 0, 0, ForceMode.VelocityChange);
+        if (currentVelocityX > 0.1f)
+            _rb.AddForce(Input.GetAxis("Horizontal") * _moveSpeed * speedMultipayer, 0, 0, ForceMode.VelocityChange);
+        else
+            _rb.AddForce(Input.GetAxis("Horizontal") * _moveLeftSpeed * speedMultipayer, 0, 0, ForceMode.VelocityChange);
+        if (grounded) _rb.AddForce(-_rb.linearVelocity.x * _friction, 0, 0, ForceMode.VelocityChange);
+
 
     }
 

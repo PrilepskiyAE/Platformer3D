@@ -6,6 +6,8 @@ public class Gun : MonoBehaviour
     [SerializeField] private Transform bulletSpawnPoint;
     [SerializeField] private float bulletSpeed;
     [SerializeField] private float shotpir;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private GameObject flash;
     private float timer;
 
    
@@ -16,11 +18,19 @@ public class Gun : MonoBehaviour
         {
             if (Input.GetMouseButton(0))
             {
-            timer=0;    
+            flash.SetActive(true);    
+            timer=0;  
+            audioSource.Play();  
             GameObject newBull = Instantiate(bulletPrefab,bulletSpawnPoint.position,bulletSpawnPoint.rotation); 
             newBull.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
+            Invoke("HigeFlash",0.08f);
             }
         }
        
+    }
+
+    public void HigeFlash()
+    {
+        flash.SetActive(false);
     }
 }
