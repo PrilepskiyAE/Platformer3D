@@ -8,6 +8,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private float shotpir;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private GameObject flash;
+    [SerializeField] private PlayerAnimation _playerAnimation;
     private float timer;
 
    
@@ -23,8 +24,14 @@ public class Gun : MonoBehaviour
             audioSource.Play();  
             GameObject newBull = Instantiate(bulletPrefab,bulletSpawnPoint.position,bulletSpawnPoint.rotation); 
             newBull.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
+                if (_playerAnimation != null)
+                {
+                    _playerAnimation.GunAnimation(true); 
+                    Invoke("HigeShoot",0.08f);
+                    }  
             Invoke("HigeFlash",0.08f);
             }
+
         }
        
     }
@@ -32,5 +39,10 @@ public class Gun : MonoBehaviour
     public void HigeFlash()
     {
         flash.SetActive(false);
+    }
+
+    public void HidenShoot()
+    {
+        _playerAnimation.GunAnimation(false); 
     }
 }

@@ -18,4 +18,10 @@ public class PlayerAnimation : MonoBehaviour
     {
         animator.SetBool("Ground", value);
     }
+
+        public void GunAnimation(bool value)
+    {
+        animator.SetBool("Shoot",value);
+    }
+ 
 }
