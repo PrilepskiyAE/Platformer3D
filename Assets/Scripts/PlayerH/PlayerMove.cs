@@ -31,7 +31,7 @@ public class PlayerMove : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftControl) && grounded)
         {
-            playerTransform.localScale = Vector3.Lerp(playerTransform.localScale, new Vector3(1f, 0.7f, 1f), Time.deltaTime * 5f);
+            playerTransform.localScale = Vector3.Lerp(playerTransform.localScale, new Vector3(1f, 0.8f, 1f), Time.deltaTime * 5f);
         }
         else
         {
