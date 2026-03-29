@@ -6,7 +6,7 @@ public class Pointer : MonoBehaviour
    [SerializeField] private Transform aim;
    [SerializeField] private Camera playerCamera;
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(ray.origin,ray.direction*50,Color.yellow);
