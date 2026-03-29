@@ -22,14 +22,15 @@ public class Gun : MonoBehaviour
             flash.SetActive(true);    
             timer=0;  
             audioSource.Play();  
+             if (_playerAnimation != null)
+                {
+                _playerAnimation.GunAnimation(); 
+                }  
             GameObject newBull = Instantiate(bulletPrefab,bulletSpawnPoint.position,bulletSpawnPoint.rotation); 
             newBull.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
-                if (_playerAnimation != null)
-                {
-                    _playerAnimation.GunAnimation(true); 
-                    Invoke("HigeShoot",0.08f);
-                    }  
+               
             Invoke("HigeFlash",0.08f);
+
             }
 
         }
@@ -41,8 +42,4 @@ public class Gun : MonoBehaviour
         flash.SetActive(false);
     }
 
-    public void HidenShoot()
-    {
-        _playerAnimation.GunAnimation(false); 
-    }
 }
