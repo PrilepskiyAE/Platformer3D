@@ -27,7 +27,7 @@ public class Gun : MonoBehaviour
                 _playerAnimation.GunAnimation(); 
                 }  
             GameObject newBull = Instantiate(bulletPrefab,bulletSpawnPoint.position,bulletSpawnPoint.rotation); 
-            newBull.GetComponent<Rigidbody>().velocity = bulletSpawnPoint.forward * bulletSpeed;
+            newBull.GetComponent<Rigidbody>().linearVelocity = bulletSpawnPoint.forward * bulletSpeed;
                
             Invoke("HigeFlash",0.08f);
 
