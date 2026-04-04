@@ -5,12 +5,16 @@ public class PlayerHealth : MonoBehaviour
    [SerializeField] int health = 5;
    [SerializeField] int maxHealth = 8;
 
+   [SerializeField] AudioSource takeDamage;
+   [SerializeField] AudioSource addHeal;
+
    private bool _invulnerable = false;
 
    public void TakeDamage(int damage)
     {
         if (_invulnerable==false){
         health -= damage;
+        takeDamage.Play();
         if (health <= 0)
         {
             health = 0;
@@ -35,6 +39,7 @@ public class PlayerHealth : MonoBehaviour
         if (health < maxHealth)
         {
             health += value;
+            addHeal.Play();
             if (health > maxHealth)
             {
                 health = maxHealth;
