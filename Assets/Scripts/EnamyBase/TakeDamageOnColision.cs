@@ -3,6 +3,7 @@ using UnityEngine;
 public class TakeDamageOnColision : MonoBehaviour
 {
     [SerializeField] EnamyHealth _enamyHealth;
+    [SerializeField] int damage=1;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -10,7 +11,7 @@ public class TakeDamageOnColision : MonoBehaviour
         {
             if (collision.rigidbody.GetComponent<Bullet>())
             {
-                _enamyHealth.TakeDamage(1);
+                _enamyHealth.TakeDamage(damage);
             }
         }
 
