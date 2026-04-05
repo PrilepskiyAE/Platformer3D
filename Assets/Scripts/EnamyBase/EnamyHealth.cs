@@ -1,16 +1,19 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnamyHealth : MonoBehaviour
 {
-    public int Health;
+   [SerializeField] private int health;
+    [SerializeField] private UnityEvent eventeTakeDamage;
    
     public void TakeDamage(int damage)
     {
-        Health-=damage;
-        if (Health <= 0)
+        health-=damage;
+        if (health <= 0)
         {
             Die();
         }
+        eventeTakeDamage.Invoke();
     }
     public void Die()
     {

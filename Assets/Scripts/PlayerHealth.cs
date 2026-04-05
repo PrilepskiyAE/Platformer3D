@@ -1,14 +1,17 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] int health = 5;
-    [SerializeField] int maxHealth = 8;
+    [SerializeField] private int health = 5;
+    [SerializeField]private  int maxHealth = 8;
 
-    [SerializeField] AudioSource takeDamage;
-    [SerializeField] AudioSource addHeal;
+    [SerializeField]private  AudioSource addHeal;
 
-    [SerializeField] HealthUI healthUI;
+    [SerializeField] private HealthUI healthUI;
+
+
+    [SerializeField] private UnityEvent eventOnTakeDamage;
 
     void Start()
     {
@@ -23,7 +26,6 @@ public class PlayerHealth : MonoBehaviour
         if (_invulnerable == false)
         {
             health -= damage;
-            takeDamage.Play();
             if (health <= 0)
             {
                 health = 0;
@@ -33,6 +35,9 @@ public class PlayerHealth : MonoBehaviour
             Invoke("StopInvulnerability", 1f);
         }
         healthUI.UpdateHealth(health);
+   
+
+        eventOnTakeDamage.Invoke();
     }
 
     void StopInvulnerability()
