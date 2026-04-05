@@ -2,27 +2,37 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-   [SerializeField] int health = 5;
-   [SerializeField] int maxHealth = 8;
+    [SerializeField] int health = 5;
+    [SerializeField] int maxHealth = 8;
 
-   [SerializeField] AudioSource takeDamage;
-   [SerializeField] AudioSource addHeal;
+    [SerializeField] AudioSource takeDamage;
+    [SerializeField] AudioSource addHeal;
 
-   private bool _invulnerable = false;
+    [SerializeField] HealthUI healthUI;
 
-   public void TakeDamage(int damage)
+    void Start()
     {
-        if (_invulnerable==false){
-        health -= damage;
-        takeDamage.Play();
-        if (health <= 0)
+        healthUI.SetupHealth(maxHealth);
+        healthUI.UpdateHealth(health);
+    }
+
+    private bool _invulnerable = false;
+
+    public void TakeDamage(int damage)
+    {
+        if (_invulnerable == false)
         {
-            health = 0;
-            Die();
+            health -= damage;
+            takeDamage.Play();
+            if (health <= 0)
+            {
+                health = 0;
+                Die();
+            }
+            _invulnerable = true;
+            Invoke("StopInvulnerability", 1f);
         }
-        _invulnerable = true;
-        Invoke("StopInvulnerability",1f);
-        }
+        healthUI.UpdateHealth(health);
     }
 
     void StopInvulnerability()
@@ -45,6 +55,6 @@ public class PlayerHealth : MonoBehaviour
                 health = maxHealth;
             }
         }
-
+        healthUI.UpdateHealth(health);
     }
 }
