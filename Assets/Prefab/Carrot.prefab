@@ -86,7 +86,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.079, y: 8.02, z: 0}
-  m_LocalScale: {x: 2.0294, y: 2.0294, z: 2.0294}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7211482080412159297}
@@ -130,7 +130,7 @@ Rigidbody:
   m_GameObject: {fileID: 7533776452668330460}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 0.5
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -177,6 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 4959576139224768756}
   speed: 3
+  upwardForce: 1
 --- !u!1 &8461734936592197510
 GameObject:
   m_ObjectHideFlags: 0
