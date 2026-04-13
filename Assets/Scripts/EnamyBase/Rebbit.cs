@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Rebbit : MonoBehaviour
 {
- [SerializeField] private  DetectedPlayer detectedPlayer;
+
  [SerializeField ] private RotateTowardsPlayer rotateTowardsPlayer;
 
     // Update is called once per frame
